@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">SSL Chat App</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      {% if session.logged_in %}
+        <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="/chatting/{{ session.uid }}"><span class="glyphicon glyphicon-edit"></span> Chat Room</a></li>
+        <li><a href="/out"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+      {% else %}
+        <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Signup</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
