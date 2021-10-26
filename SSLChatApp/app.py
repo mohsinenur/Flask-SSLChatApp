@@ -198,7 +198,7 @@ def chats():
         uid = session['uid']
         # Create cursor
         cur = mysql.connection.cursor()
-        # Get message
+        # Get message here
         cur.execute("SELECT * FROM messages WHERE (msg_by=%s AND msg_to=%s) OR (msg_by=%s AND msg_to=%s) "
                     "ORDER BY id ASC", (id, uid, uid, id))
         chats = cur.fetchall()
